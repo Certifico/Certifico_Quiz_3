@@ -11,22 +11,20 @@ package certifico_quiz_3;
  */
 
 import java.util.Scanner;
-import java.util.Queue;
-import java.util.LinkedList;
 
-class Node1 {
+class Node {
     int data;
     Node next;
     Node prev;
 
-    public Node1(int data) {
+    public Node(int data) {
         this.data = data;
         this.next = null;
         this.prev = null;
     }
 }
 
-class nNode1 {
+class nNode {
     Node front;
     Node rear;
 
@@ -56,7 +54,8 @@ class nNode1 {
     public int deleteFront() {
         if (front == null) {
             System.out.println("Queue is empty.");
-            return -1; 
+            return -1; // Return a default value
+        } else {
             int data = front.data;
             front = front.next;
             if (front != null) {
@@ -96,39 +95,10 @@ class nNode1 {
     }
 }
 
-public class Certifico_Quiz_3 {      
-    public static void main(String[] args) throws Exception {
-        
-        Certifico_Quiz_3 list = new Certifico_Quiz_3();
-            Scanner scn = new Scanner(System.in);
-                boolean start = true;
-                
-                while(start){
-                    System.out.println("MENU");
-                        System.out.println("[1] Number 1 ");
-                            System.out.println("[2] Number 2");
-                                System.out.println("[3] Exit");
-                                
-                int choice = scn.nextInt();
-                
-                switch (choice){
-                    case 1:
-                     Queue<Integer> number1 = new LinkedList<>();
-                          for(int i = 1; i <= 9; i++){
-                                number1.offer(i);
-                    }
-                            System.out.println("-----------------------------------------------------------------");
-                                System.out.println("Write a program to create a linear queue containing nine elements");
-                                    System.out.println("-----------------------------------------------------------------");
-        
-                                while (!number1.isEmpty()) {            
-                                    int Element = number1.poll();
-                                        System.out.println(Element + " ");
-                    break;
-                    }       
-                    case 2:
-                            nNode deque = new nNode();
-                           Scanner scanner = new Scanner(System.in);
+public class Quiz_Number_2 {
+    public static void main(String[] args) {
+        nNode deque = new nNode();
+        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Choose an operation:");
@@ -139,9 +109,9 @@ public class Certifico_Quiz_3 {
                                 System.out.println("5. Display");
                                     System.out.println("6. Exit");
 
-            int choice1 = scanner.nextInt();
+            int choice = scanner.nextInt();
 
-            switch (choice1) {
+            switch (choice) {
                 case 1:
                     System.out.print("Enter element to insert at front: ");
                         int frontElement = scanner.nextInt();
@@ -170,19 +140,8 @@ public class Certifico_Quiz_3 {
                         System.exit(0);
                 default:
                     System.out.println("Invalid");
-                    break;
             }
         }
-                    case 3:
-                    scn.close();
-                        System.out.println("Thank you Sir");
-                            System.exit(0);
-
-                    break;
-                    default:
-                        System.out.println("Try Again");
-
-                }
-                }
+    }
 }
-}
+
